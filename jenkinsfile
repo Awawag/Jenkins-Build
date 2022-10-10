@@ -7,7 +7,7 @@ node{
         app = docker.build("awa/nginx")
     }
     stage('Test image') {
-        docker.image('awa/nginx').withRun('-p 80:80') {c ->
+        docker.image('awa/nginx').withRun('-p 8082:80') {c ->
         sh 'docker ps'
         sh 'curl localhost'
         }
